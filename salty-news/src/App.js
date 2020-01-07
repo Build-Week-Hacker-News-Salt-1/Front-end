@@ -1,4 +1,7 @@
 import React from 'react';
+
+import Login from './components/Login';
+
 import logo from './logo.svg';
 import './App.css';
 
@@ -19,6 +22,9 @@ function App() {
           Learn React
         </a>
       </header>
+
+      <Login></Login>
+
     </div>
   );
 }
