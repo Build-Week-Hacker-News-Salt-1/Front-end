@@ -1,7 +1,6 @@
 import React from 'react';
 
-import Login from './components/Login';
-import About from './components/about/index';
+import { Page } from './login_signup_page';
 
 // import logo from './logo.svg';
 // import './App.css';
@@ -24,8 +23,7 @@ function App() {
         </a>
       </header>
 
-      <Login></Login>
-      <About></About>
+      <Page />
 
     </div>
   );
