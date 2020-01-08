@@ -5,16 +5,16 @@ const Login = props => {
 
   
     const  [ credentials, setCredentials ] = useState({
-      username: "cori",
-      password: "cori"
+      username: "joe",
+      password: "joseph"
     })
   
     const handleSubmit = e => {
       e.preventDefault();
       axios
-          .post("http://localhost:3456/api/login", credentials)
+          .post("https://salty-hacker.herokuapp.com/api/login", credentials)
           .then(res => {
-              // console.log(res);
+              console.log(res);
               localStorage.setItem("token", res.data.payload)
               props.history.push("")
           })
@@ -26,28 +26,32 @@ const Login = props => {
   
   
     return (
-      <div className="login-container">
-        <h2 className="header-login">
-          LOGIN PAGE
+      <div>
+        <h2>
+          Login
         </h2>
         <div className="login-form-main">
           <form onSubmit={handleSubmit}>
+            <div>
               <input
-                  type="text"
-                  name="username"
-                  value={credentials.username}
-                  onChange={e => setCredentials({username: e.target.value})}
+                type="text"
+                name="username"
+                value={credentials.username}
+                onChange={e => setCredentials({username: e.target.value})}
               />
-              <input
-                  type="text"
-                  name="password"
-                  value={credentials.password}
-                  onChange={e => setCredentials({password: e.target.value})}
+            </div>
+            <div>
+             <input
+                type="text"
+                name="password"
+                value={credentials.password}
+                onChange={e => setCredentials({password: e.target.value})}
               />
-              <button>Login</button>
+            </div>
+            <button>Login</button>
           </form>
         </div>
-        </div>
+      </div>
     );
   };
   
