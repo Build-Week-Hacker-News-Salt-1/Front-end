@@ -1,8 +1,11 @@
 import React from 'react';
 
-import Login from './components/Login';
-import Signup from './components/Signup';
-import About from './components/about/index';
+ veto-ramirez
+import { Page } from './login_signup_page';
+
+
+//import About from './components/about/index';
+ master
 
 // import logo from './logo.svg';
 // import './App.css';
@@ -24,12 +27,17 @@ function App() {
           Learn React
         </a>
       </header>
+ veto-ramirez
+      
+      <Page />
 
-      <Login></Login>
-      <Signup />
-      <About></About>
+
+
+
+      //<About></About>
     
     
+ master
     </div>
   );
 }
