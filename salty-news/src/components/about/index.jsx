@@ -17,7 +17,6 @@ import jeffrey from "../../assets/images/jeffrey.jpg"
 const About = () => {
     var team = teamData();
 
-
     return (
         <div>
             <Header id="header" textAlign="center" as="h1">Hacker News Saltiest Comments Team</Header>

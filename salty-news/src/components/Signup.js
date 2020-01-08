@@ -1,18 +1,20 @@
 import React, {useState} from "react";
 import axios from "axios";
+// import {axiosWithAuth} from "../utils/axiosWithAuth";
 
 const Signup = () => {
 
     const  [ signupCredentials, setSignupCredentials ] = useState({
-        username: "",
-        password: "",
-        email: ""
+        username: "joe",
+        password: "joseph",
+        email: "jo@hotmail.com"
       })
 
-      const handleSubmit = e => {
+
+    const handleSubmit = e => {
         e.preventDefault();
         axios
-            .post("http://localhost:3456/api/register", signupCredentials)
+            .post("https://salty-hacker.herokuapp.com/api/register", signupCredentials)
             .then(res => {
                 console.log(res)
             })
@@ -23,6 +25,7 @@ const Signup = () => {
 
     return(
         <div className="login-container">
+ veto-ramirez
         <h2 className="header-login">
           Create Account
         </h2>
@@ -64,6 +67,9 @@ const Signup = () => {
               <button>SignUp</button>
           </form>
         </div>
+
+ 
+
         </div>
     )
 }
