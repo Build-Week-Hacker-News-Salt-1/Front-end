@@ -2,9 +2,8 @@ import axios from "axios";
 
 export const axiosWithAuth = () => {
     const token = localStorage.getItem("token");
-
     return axios.create({
-        baseURL: 'http://localhost:3456/api',
+        baseURL: 'https://salty-hacker.herokuapp.com/api',
         headers: {
             Authorization: token
         }

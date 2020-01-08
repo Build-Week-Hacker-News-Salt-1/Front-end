@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Login from './components/Login';
+import Signup from './components/Signup';
 import About from './components/about/index';
 
 // import logo from './logo.svg';
@@ -25,7 +26,9 @@ function App() {
       </header>
 
       <Login></Login>
+      <Signup />
       <About></About>
+    
     
     </div>
   );
