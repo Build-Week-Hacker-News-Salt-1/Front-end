@@ -2,13 +2,19 @@ import React, {useState} from "react";
 import axios from "axios";
 // import {axiosWithAuth} from "../utils/axiosWithAuth";
 
+const initialState = {
+  username: "",
+  password: "",
+  email: ""
+};
+
 const Signup = () => {
 
-    const  [ signupCredentials, setSignupCredentials ] = useState({
-        username: "joe",
-        password: "joseph",
-        email: "jo@hotmail.com"
-      })
+    const  [ signupCredentials, setSignupCredentials ] = useState(initialState)
+
+    const resetField = () => {
+      setSignupCredentials(initialState);
+    }
 
 
     const handleSubmit = e => {
@@ -17,15 +23,17 @@ const Signup = () => {
             .post("https://salty-hacker.herokuapp.com/api/register", signupCredentials)
             .then(res => {
                 console.log(res)
+                resetField();
             })
             .catch(err =>
                 console.log(err)    
             )
     }
 
+    console.log(signupCredentials)
+
     return(
         <div className="login-container">
- veto-ramirez
         <h2 className="header-login">
           Create Account
         </h2>
@@ -38,7 +46,7 @@ const Signup = () => {
                 type="text"
                 name="username"
                 value={signupCredentials.username}
-                onChange={e => setSignupCredentials({username: e.target.value})}
+                onChange={e => setSignupCredentials({...signupCredentials, username: e.target.value})}
                 />
               </label>
             </div>
@@ -49,7 +57,7 @@ const Signup = () => {
                   type="text"
                   name="password"
                   value={signupCredentials.password}
-                  onChange={e => setSignupCredentials({password: e.target.value})}
+                  onChange={e => setSignupCredentials({...signupCredentials, password: e.target.value})}
                 />
               </label>
             </div>
@@ -60,7 +68,7 @@ const Signup = () => {
                   type="text"
                   name="email"
                   value={signupCredentials.email}
-                  onChange={e => setSignupCredentials({email: e.target.value})}
+                  onChange={e => setSignupCredentials({...signupCredentials, email: e.target.value})}
                 />
               </label>
             </div>

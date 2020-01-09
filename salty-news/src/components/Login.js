@@ -1,21 +1,28 @@
 import React, {useState} from "react";
 import axios from "axios";
 
+const initialState = {
+  username: "",
+  password: ""
+};
+
 const Login = props => {
 
-    const  [ credentials, setCredentials ] = useState({
-      username: "joe",
-      password: "joseph"
-    })
+    const  [ credentials, setCredentials ] = useState(initialState)
+
+    const resetField = () => {
+      setCredentials(initialState);
+    }
   
     const handleSubmit = e => {
       e.preventDefault();
       axios
           .post("https://salty-hacker.herokuapp.com/api/login", credentials)
           .then(res => {
+              resetField();
               console.log(res);
-              localStorage.setItem("token", res.data.payload)
-              props.history.push("")
+              localStorage.setItem("token", res.data.payload);
+              props.history.push("");
           })
           .catch(err =>
               console.log(err)    
@@ -36,7 +43,7 @@ const Login = props => {
                   type="text"
                   name="username"
                   value={credentials.username}
-                  onChange={e => setCredentials({username: e.target.value})}
+                  onChange={e => setCredentials({...credentials, username: e.target.value})}
                 />
               </label>
             </div>
@@ -47,7 +54,7 @@ const Login = props => {
                   type="text"
                   name="password"
                   value={credentials.password}
-                  onChange={e => setCredentials({password: e.target.value})}
+                  onChange={e => setCredentials({...credentials, password: e.target.value})}
                 />
               </label>
             </div>
