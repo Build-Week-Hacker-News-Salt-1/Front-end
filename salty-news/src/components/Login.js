@@ -8,7 +8,8 @@ const initialState = {
 
 const Login = props => {
 
-    const  [ credentials, setCredentials ] = useState(initialState)
+    const [ credentials, setCredentials ] = useState(initialState);
+    const [ error, setError ] = useState(false);
 
     const resetField = () => {
       setCredentials(initialState);
@@ -20,14 +21,18 @@ const Login = props => {
           .post("https://salty-hacker.herokuapp.com/api/login", credentials)
           .then(res => {
               resetField();
+              setError(false)
               console.log(res);
               localStorage.setItem("token", res.data.payload);
-              props.history.push("");
+              // props.history.push("");       
           })
-          .catch(err =>
-              console.log(err)    
-          )
+          .catch(err => {
+            console.log(err)
+            setError(true)
+          })
   }
+
+  console.log(error)
    
     return (
       <div>
@@ -60,6 +65,9 @@ const Login = props => {
             </div>
             <button>Login</button>
           </form>
+          {error ? <div className="error-message">
+                <p>Username or password is incorrect</p>
+          </div> : null }
         </div>
       </div>
     );
