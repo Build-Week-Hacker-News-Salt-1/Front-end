@@ -12,18 +12,11 @@ import HomePage from './components/HomePage';
 function App() {
   return (
     <div className="App">
-<<<<<<< HEAD
       <header className="App-header">
         <Link to='/login_signup'>Login</Link>
       </header>
       
       <Route path='/login_signup' component={Page} />
-
-=======
-      <Page />
-      //<About></About>
-      <HomePage />
->>>>>>> b0f1b73059a820934eec6ed2184700a99d57513e
     </div>
   );
 }
