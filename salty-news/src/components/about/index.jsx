@@ -19,7 +19,7 @@ const About = () => {
 
     return (
         <div>
-            <Header id="header" textAlign="center" as="h1">The Dream Team</Header>
+            <Header id="header" textAlign="center" as="h1">Hacker News Saltiest Comments Team</Header>
 
             <div style={{ display: "flex", flexFlow: "wrap" }}>
 
@@ -41,18 +41,20 @@ export default About;
 
 function teamData() {
     return [
-        { img: ali, role: "Front end", name: "Ali Sheikh"},
-        { img: alvin, role: "Data Science", name: "Alvin Walker"},
-        { img: aric, role: "Data Science", name: "Aric Phelps"},
-        { img: benjamin, role: "Front end", name: "Benjamin Hall"},
-        { img: christian, role: "Front end", name: "Christian Auld"},
-        { img: cori, role: "Back end", name: "Cori Sternberg"},
-        { img: dakota, role: "Front end", name: "Dakota Pope"},
-        { img: veto, role: "Front end", name: "Veto Ramirez"},
-        { img: jeffrey, role: "Data Science", name: "Jeffrey Sheppard"},
-    ].sort(function sortByRole(desc, name) {
-        if (desc.role < name.role) return -1;
-        if (desc.role > name.role) return 1;
+        { img: ali, role: "Front end", name: "Ali Sheikh", bio: "" },
+        { img: alvin, role: "Data Science", name: "Alvin Walker", bio: "" },
+        { img: aric, role: "Data Science", name: "Aric Phelps", bio: "" },
+        { img: benjamin, role: "Front end", name: "Benjamin Hall", bio: "" },
+        { img: christian, role: "Front end", name: "Christian Auld", bio: "" },
+        { img: null, role: "Back end", name: "NA", bio: "" },
+        { img: cori, role: "Back end", name: "Cori Sternberg", bio: "" },
+        { img: dakota, role: "Front end", name: "Dakota Pope", bio: "" },
+        { img: null, role: "", name: "NA", bio: "" },
+        { img: veto, role: "Front end", name: "Veto Ramirez", bio: "" },
+        { img: jeffrey, role: "Data Science", name: "Jeffrey Sheppard", bio: "" },
+    ].sort(function sortByRole(a, b) {
+        if (a.role < b.role) return -1;
+        if (a.role > b.role) return 1;
         return 0;
     })
 }
