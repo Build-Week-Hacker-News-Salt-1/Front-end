@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import axios from "axios";
 
+
 const initialState = {
   username: "",
   password: ""
@@ -41,32 +42,36 @@ const Login = props => {
         </h2>
         <div className="login-form-main">
           <form onSubmit={handleSubmit}>
-            <div>
-              <label>
+            <div className="form-container-grid">
+              <label for="username-login">
                 username:
+              </label>
                 <input
+                  id="username-login"
                   type="text"
                   name="username"
                   value={credentials.username}
                   onChange={e => setCredentials({...credentials, username: e.target.value})}
                 />
-              </label>
+              
             </div>
-            <div>
-              <label>
+            <div className="form-container-grid">
+              <label for="password-login">
                 password:
+              </label>
                 <input
+                  id="password-login"
                   type="text"
                   name="password"
                   value={credentials.password}
                   onChange={e => setCredentials({...credentials, password: e.target.value})}
                 />
-              </label>
+    
             </div>
             <button>Login</button>
           </form>
           {error ? <div className="error-message">
-                <p>Username or password is incorrect</p>
+                <p>Username or password is incorrect.</p>
           </div> : null }
         </div>
       </div>
