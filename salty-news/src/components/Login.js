@@ -3,7 +3,6 @@ import axios from "axios";
 
 const Login = props => {
 
-  
     const  [ credentials, setCredentials ] = useState({
       username: "joe",
       password: "joseph"
@@ -22,9 +21,7 @@ const Login = props => {
               console.log(err)    
           )
   }
-  
-  
-  
+   
     return (
       <div>
         <h2>
@@ -33,20 +30,26 @@ const Login = props => {
         <div className="login-form-main">
           <form onSubmit={handleSubmit}>
             <div>
-              <input
-                type="text"
-                name="username"
-                value={credentials.username}
-                onChange={e => setCredentials({username: e.target.value})}
-              />
+              <label>
+                username:
+                <input
+                  type="text"
+                  name="username"
+                  value={credentials.username}
+                  onChange={e => setCredentials({username: e.target.value})}
+                />
+              </label>
             </div>
             <div>
-             <input
-                type="text"
-                name="password"
-                value={credentials.password}
-                onChange={e => setCredentials({password: e.target.value})}
-              />
+              <label>
+                password:
+                <input
+                  type="text"
+                  name="password"
+                  value={credentials.password}
+                  onChange={e => setCredentials({password: e.target.value})}
+                />
+              </label>
             </div>
             <button>Login</button>
           </form>
