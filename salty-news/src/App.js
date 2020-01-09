@@ -1,4 +1,5 @@
 import React from 'react';
+import { Route, Link } from 'react-router-dom';
 
 import { Page } from './login_signup_page';
 import Login from './components/Login';
@@ -11,9 +12,11 @@ import HomePage from './components/HomePage';
 function App() {
   return (
     <div className="App">
-      <Page />
-      //<About></About>
-      <HomePage />
+      <header className="App-header">
+        <Link to='/login_signup'>Login</Link>
+      </header>
+      
+      <Route path='/login_signup' component={Page} />
     </div>
   );
 }
