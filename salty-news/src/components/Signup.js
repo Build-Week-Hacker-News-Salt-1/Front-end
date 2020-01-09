@@ -10,7 +10,9 @@ const initialState = {
 
 const Signup = () => {
 
-    const  [ signupCredentials, setSignupCredentials ] = useState(initialState)
+    const [ signupCredentials, setSignupCredentials ] = useState(initialState)
+    const [ error, setError ] = useState(false);
+    const [ successSignup, setSuccessSignup] = useState(false);
 
     const resetField = () => {
       setSignupCredentials(initialState);
@@ -22,12 +24,16 @@ const Signup = () => {
         axios
             .post("https://salty-hacker.herokuapp.com/api/register", signupCredentials)
             .then(res => {
-                console.log(res)
-                resetField();
+              console.log(res);
+              resetField();
+              setError(false);
+              setSuccessSignup(true);
             })
-            .catch(err =>
-                console.log(err)    
-            )
+            .catch(err => {
+              console.log(err);
+              setError(true);
+              setSuccessSignup(false);
+            })
     }
 
     console.log(signupCredentials)
@@ -74,6 +80,12 @@ const Signup = () => {
             </div>
               <button>SignUp</button>
           </form>
+          {error ? <div className="error-message">
+                <p>Incorrect Signup. Please input a valid username, password, and email.</p>
+          </div> : null }
+          {successSignup ? <div className="error-message">
+                <p>Successfull registration. Please Login above.</p>
+          </div> : null }
         </div>
 
  
