@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import CommentCard from './CommentCard';
 import Header from './Header';
 
-export default function HomePage({}) {
+const HomePage = props => {
     //const [feed, setFeed] = useState([]);
 
     const addCommentFn = comment => {
@@ -16,7 +16,7 @@ export default function HomePage({}) {
 
     return (
         <div>
-            <Header />
+            <Header/>
 
             <div className="feed">
 
@@ -24,3 +24,5 @@ export default function HomePage({}) {
         </div>
     )
 }
+
+export default HomePage;

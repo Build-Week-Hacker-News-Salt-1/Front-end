@@ -13,6 +13,8 @@ export default function CommentCard(props) {
     setComment({ ...comment, [e.target.name]: e.target.value });
   };
 
+
+
   const handleSubmit = e => {
     e.preventDefault();
     props.addCommentFn(comment);
