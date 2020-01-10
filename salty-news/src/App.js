@@ -15,9 +15,9 @@ const App = props => {
   return (
     <div className="App">
 
-      {/* <header className="App-header">
+      <header className="App-header">
         <Link to='/login_signup'>Login</Link>
-      </header>  */}
+      </header> 
       
       
 
