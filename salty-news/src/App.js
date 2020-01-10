@@ -1,5 +1,4 @@
 import React from 'react';
-import { Route, Link } from 'react-router-dom';
 
 import { Route, Link, Switch } from 'react-router-dom';
 
@@ -7,8 +6,6 @@ import PrivateRoute from './components/PrivateRoute'
 
 
 import { Page } from './login_signup_page';
-import Login from './components/Login';
-import About from './components/about/index';
 import HomePage from './components/HomePage';
 
 // import logo from './logo.svg';
@@ -18,9 +15,9 @@ const App = props => {
   return (
     <div className="App">
 
-      <header className="App-header">
+      {/* <header className="App-header">
         <Link to='/login_signup'>Login</Link>
-      </header> 
+      </header>  */}
       
       
 
