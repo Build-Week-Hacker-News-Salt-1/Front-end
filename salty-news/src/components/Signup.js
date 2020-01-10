@@ -46,7 +46,7 @@ const Signup = () => {
         <div className="login-form-main">
           <form onSubmit={handleSubmit}>
             <div className="form-container-grid">
-              <label for="username-signup">
+              <label htmlFor="username-signup">
                 username:
               </label>
                 <input
@@ -58,7 +58,7 @@ const Signup = () => {
                 />
             </div>
             <div className="form-container-grid">
-              <label for="password-signup">
+              <label htmlFor="password-signup">
                 password:
               </label>
                 <input
@@ -70,7 +70,7 @@ const Signup = () => {
                 />
             </div>
             <div className="form-container-grid">
-              <label for="email-signup">
+              <label htmlFor="email-signup">
                 email:
               </label>
                 <input

@@ -25,7 +25,7 @@ const Login = props => {
               setError(false)
               console.log(res);
               localStorage.setItem("token", res.data.payload);
-              // props.history.push("");       
+              //props.history.push("/HomePage");       
           })
           .catch(err => {
             console.log(err)
@@ -43,7 +43,7 @@ const Login = props => {
         <div className="login-form-main">
           <form onSubmit={handleSubmit}>
             <div className="form-container-grid">
-              <label for="username-login">
+              <label htmlFor="username-login">
                 username:
               </label>
                 <input
@@ -56,7 +56,7 @@ const Login = props => {
               
             </div>
             <div className="form-container-grid">
-              <label for="password-login">
+              <label htmlFor="password-login">
                 password:
               </label>
                 <input
