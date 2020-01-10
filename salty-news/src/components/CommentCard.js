@@ -3,15 +3,17 @@ import styled from 'styled-components';
 
 let StyledCard = styled.div`
     /*nothing yet*/
-`;;
+`
 
 export default function CommentCard(props) {
 
   const [comment, setComment] = useState({title: "", text: ""});
 
   const handleChange = e => {
-    setNote({ ...comment, [e.target.name]: e.target.value });
+    setComment({ ...comment, [e.target.name]: e.target.value });
   };
+
+
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -28,7 +30,7 @@ export default function CommentCard(props) {
             <input 
               type='text' 
               name='title'
-              value={title}
+              value={comment.title}
               onChange={handleChange}
             />
           </label>
@@ -39,11 +41,12 @@ export default function CommentCard(props) {
             <input 
               type='textarea' 
               name='text'
-              value={text}
+              value={comment.text}
               onChange={handleChange}
             />
           </label>
         </div>
+        <button>Add Comment</button>
       </form>
     </StyledCard>
   )
