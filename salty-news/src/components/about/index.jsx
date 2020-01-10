@@ -16,7 +16,9 @@ let Card = styled.div`
 const About = () => {
     return (
         <div>
-            <div id="header" textAlign="middle" as="h2">Hacker News Saltiest Comments Team</div>
+            <h1 id="header" style={{
+                textAlign: "center",
+            }}>Hacker News Saltiest Comments Team</h1>
 
             <div style={{
                 display: "flex",
@@ -30,7 +32,7 @@ const About = () => {
                             <img src={img} alt={name}/>
                             <h2>{name}</h2>
                             <h3>{role}</h3>
-                            <h5>{bio || "LambdaSchool Student"}</h5>
+                            <p>{bio || "LambdaSchool Student"}</p>
                         </Card>
                     )
                 })}
