@@ -2,6 +2,8 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import styled from 'styled-components';
 
+import { withRouter } from 'react-router-dom';
+
 const StyledHeader = styled.header`
     display: flex;
     flex-direction: row;
@@ -28,7 +30,15 @@ const StyledHeader = styled.header`
     }
 `;
 
-export default function Header({user}) {
+const Header = props => {
+
+    const logout = () => {
+        localStorage.clear("token");
+        props.history.push("/")
+    }
+
+
+
     return (
         <StyledHeader>
             {/* maybe a search bar for stretch goal here */}
@@ -36,15 +46,21 @@ export default function Header({user}) {
                 <Link to="/">Home</Link>
             </div>
             <div className="right">
-                <Link to='/login_signup'>Login</Link>
                 {/* 
                     ! TODO !
                     user dropdown menu. Text content = username
                     option to log out
                 */}
+
+                {localStorage.getItem("token") ? <Link onClick={logout}>Logout</Link> : null}
+                {!localStorage.getItem("token") ? <Link to='/login_signup'>Login</Link> : null}
+                <Link to='./about'>About</Link>
                 <span>PLACEHOLDER</span>
             </div>
             
         </StyledHeader>
     )
 }
+
+export default withRouter (Header);
+// export default Header;
