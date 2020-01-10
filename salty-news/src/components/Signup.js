@@ -36,7 +36,7 @@ const Signup = () => {
             })
     }
 
-    console.log(signupCredentials)
+  
 
     return(
         <div className="login-container">
@@ -63,7 +63,7 @@ const Signup = () => {
               </label>
                 <input
                   id="password-signup"
-                  type="text"
+                  type="password"
                   name="password"
                   value={signupCredentials.password}
                   onChange={e => setSignupCredentials({...signupCredentials, password: e.target.value})}
