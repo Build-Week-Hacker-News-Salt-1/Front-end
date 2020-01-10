@@ -36,7 +36,7 @@ export default function Header({user}) {
                 <Link to="/">Home</Link>
             </div>
             <div className="right">
-                <Link to="/saved">Saved</Link>
+                <Link to='/login_signup'>Login</Link>
                 {/* 
                     ! TODO !
                     user dropdown menu. Text content = username
