@@ -1,6 +1,8 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import { Link, Route } from 'react-router-dom';
 import styled from 'styled-components';
+
+import CommentCard from './CommentCard';
 
 const StyledHeader = styled.header`
     display: flex;
@@ -31,20 +33,27 @@ const StyledHeader = styled.header`
 export default function Header({user}) {
     return (
         <StyledHeader>
-            {/* maybe a search bar for stretch goal here */}
-            <div className="left">
-                <Link to="/">Home</Link>
-            </div>
-            <div className="right">
-                <Link to="/saved">Saved</Link>
-                {/* 
+          <div className="left">
+            <Link to="/">Home</Link>
+          </div>
+          <div className="right">
+            <Link to="/saved">Saved</Link>
+          </div>
+              {/* 
                     ! TODO !
                     user dropdown menu. Text content = username
                     option to log out
-                */}
-                <span>PLACEHOLDER</span>
-            </div>
-            
+              */}
+          <div>
+            <nav>
+              <Link to='/CommentCard'>Submit Comment</Link>
+            </nav>
+            <Route 
+              path='/CommentCard' 
+              component={CommentCard} 
+            />
+          </div>
+          {/* maybe a search bar for stretch goal here */}       
         </StyledHeader>
     )
 }
