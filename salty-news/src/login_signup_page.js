@@ -5,11 +5,12 @@ import Signup from './components/Signup';
 import Header from './components/Header'
 
 export const Page = props => {
-  return (
-    <div>
+  return ( <>
       <Header />
+    <div className="login-signup-page-div">
       <Login history={props.history} />
       <Signup />
     </div>
+    </>
   );
 };
