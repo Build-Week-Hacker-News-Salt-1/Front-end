@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import axios from "axios";
 
+
 const initialState = {
   username: "",
   password: ""
@@ -8,7 +9,8 @@ const initialState = {
 
 const Login = props => {
 
-    const  [ credentials, setCredentials ] = useState(initialState)
+    const [ credentials, setCredentials ] = useState(initialState);
+    const [ error, setError ] = useState(false);
 
     const resetField = () => {
       setCredentials(initialState);
@@ -20,14 +22,18 @@ const Login = props => {
           .post("https://salty-hacker.herokuapp.com/api/login", credentials)
           .then(res => {
               resetField();
+              setError(false)
               console.log(res);
               localStorage.setItem("token", res.data.payload);
-              props.history.push("");
+              //props.history.push("/HomePage");       
           })
-          .catch(err =>
-              console.log(err)    
-          )
+          .catch(err => {
+            console.log(err)
+            setError(true)
+          })
   }
+
+  console.log(error)
    
     return (
       <div>
@@ -36,30 +42,37 @@ const Login = props => {
         </h2>
         <div className="login-form-main">
           <form onSubmit={handleSubmit}>
-            <div>
-              <label>
+            <div className="form-container-grid">
+              <label htmlFor="username-login">
                 username:
+              </label>
                 <input
+                  id="username-login"
                   type="text"
                   name="username"
                   value={credentials.username}
                   onChange={e => setCredentials({...credentials, username: e.target.value})}
                 />
-              </label>
+              
             </div>
-            <div>
-              <label>
+            <div className="form-container-grid">
+              <label htmlFor="password-login">
                 password:
+              </label>
                 <input
+                  id="password-login"
                   type="text"
                   name="password"
                   value={credentials.password}
                   onChange={e => setCredentials({...credentials, password: e.target.value})}
                 />
-              </label>
+    
             </div>
             <button>Login</button>
           </form>
+          {error ? <div className="error-message">
+                <p>Username or password is incorrect.</p>
+          </div> : null }
         </div>
       </div>
     );
