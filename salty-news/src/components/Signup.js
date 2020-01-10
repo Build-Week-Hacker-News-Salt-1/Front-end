@@ -10,7 +10,9 @@ const initialState = {
 
 const Signup = () => {
 
-    const  [ signupCredentials, setSignupCredentials ] = useState(initialState)
+    const [ signupCredentials, setSignupCredentials ] = useState(initialState)
+    const [ error, setError ] = useState(false);
+    const [ successSignup, setSuccessSignup] = useState(false);
 
     const resetField = () => {
       setSignupCredentials(initialState);
@@ -22,12 +24,16 @@ const Signup = () => {
         axios
             .post("https://salty-hacker.herokuapp.com/api/register", signupCredentials)
             .then(res => {
-                console.log(res)
-                resetField();
+              console.log(res);
+              resetField();
+              setError(false);
+              setSuccessSignup(true);
             })
-            .catch(err =>
-                console.log(err)    
-            )
+            .catch(err => {
+              console.log(err);
+              setError(true);
+              setSuccessSignup(false);
+            })
     }
 
     console.log(signupCredentials)
@@ -39,41 +45,50 @@ const Signup = () => {
         </h2>
         <div className="login-form-main">
           <form onSubmit={handleSubmit}>
-            <div>
-              <label>
+            <div className="form-container-grid">
+              <label htmlFor="username-signup">
                 username:
-                <input
-                type="text"
-                name="username"
-                value={signupCredentials.username}
-                onChange={e => setSignupCredentials({...signupCredentials, username: e.target.value})}
-                />
               </label>
-            </div>
-            <div>
-              <label>
-                password:
                 <input
+                  id="username-signup"
+                  type="text"
+                  name="username"
+                  value={signupCredentials.username}
+                  onChange={e => setSignupCredentials({...signupCredentials, username: e.target.value})}
+                />
+            </div>
+            <div className="form-container-grid">
+              <label htmlFor="password-signup">
+                password:
+              </label>
+                <input
+                  id="password-signup"
                   type="text"
                   name="password"
                   value={signupCredentials.password}
                   onChange={e => setSignupCredentials({...signupCredentials, password: e.target.value})}
                 />
-              </label>
             </div>
-            <div>
-              <label>
+            <div className="form-container-grid">
+              <label htmlFor="email-signup">
                 email:
+              </label>
                 <input
+                  id="email-signup"
                   type="text"
                   name="email"
                   value={signupCredentials.email}
                   onChange={e => setSignupCredentials({...signupCredentials, email: e.target.value})}
                 />
-              </label>
             </div>
               <button>SignUp</button>
           </form>
+          {error ? <div className="error-message">
+                <p>Incorrect Signup. Please input a valid username, password, and email.</p>
+          </div> : null }
+          {successSignup ? <div className="error-message">
+                <p>Successfull registration. Please Login above.</p>
+          </div> : null }
         </div>
 
  
