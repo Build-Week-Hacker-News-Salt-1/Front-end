@@ -1,11 +1,11 @@
 import React from 'react';
 import Header from './Header';
 
-const HomePage = props => {
+const PrivateHomePage = props => {
 
     return (
         <div>
-            <Header />
+            <Header history={props.history}/>
 
             <div className="feed">
 
@@ -14,4 +14,4 @@ const HomePage = props => {
     )
 }
 
-export default HomePage;
+export default PrivateHomePage;

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {Link} from 'react-router-dom';
 import styled from 'styled-components';
 
@@ -32,13 +32,15 @@ const StyledHeader = styled.header`
 
 const Header = props => {
 
+    
+
     const logout = () => {
         localStorage.clear("token");
         props.history.push("/")
     }
 
 
-
+console.log(props.loggedInUser)
     return (
         <StyledHeader>
             {/* maybe a search bar for stretch goal here */}
@@ -51,11 +53,11 @@ const Header = props => {
                     user dropdown menu. Text content = username
                     option to log out
                 */}
-
-                {localStorage.getItem("token") ? <Link onClick={logout}>Logout</Link> : null}
-                {!localStorage.getItem("token") ? <Link to='/login_signup'>Login</Link> : null}
+                {localStorage.getItem("token") ? <Link>User: {JSON.parse(localStorage.getItem("name"))}</Link> : null }
                 <Link to='./about'>About</Link>
-                <span>PLACEHOLDER</span>
+                {!localStorage.getItem("token") ? <Link to='/login_signup'>Login</Link> : null}
+                {localStorage.getItem("token") ? <Link onClick={logout}>Logout</Link> : null}
+                
             </div>
             
         </StyledHeader>
