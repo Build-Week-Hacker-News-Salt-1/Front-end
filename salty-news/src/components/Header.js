@@ -1,6 +1,9 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import { Link, Route } from 'react-router-dom';
 import styled from 'styled-components';
+
+
+import CommentCard from './CommentCard';
 
 import { withRouter } from 'react-router-dom';
 
@@ -41,6 +44,26 @@ const Header = props => {
 
     return (
         <StyledHeader>
+          <div className="left">
+            <Link to="/">Home</Link>
+          </div>
+          <div className="right">
+            <Link to="/saved">Saved</Link>
+          </div>
+              {/* 
+                    ! TODO !
+                    user dropdown menu. Text content = username
+                    option to log out
+              */}
+          <div>
+            <nav>
+              <Link to='/CommentCard'>Submit Comment</Link>
+            </nav>
+            <Route 
+              path='/CommentCard' 
+              component={CommentCard} 
+            />
+          </div>
             {/* maybe a search bar for stretch goal here */}
             <div className="left">
                 <Link to="/">Home</Link>
@@ -57,7 +80,6 @@ const Header = props => {
                 <Link to='./about'>About</Link>
                 <span>PLACEHOLDER</span>
             </div>
-            
         </StyledHeader>
     )
 }

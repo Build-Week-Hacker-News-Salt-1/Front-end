@@ -61,7 +61,7 @@ const Login = props => {
               </label>
                 <input
                   id="password-login"
-                  type="text"
+                  type="password"
                   name="password"
                   value={credentials.password}
                   onChange={e => setCredentials({...credentials, password: e.target.value})}
