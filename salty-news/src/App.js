@@ -11,40 +11,26 @@ import CommentCard from "./components/CommentCard";
 import PrivateHomePage from "./components/PrivateHomePage";
 import About from './components/about';
 
-import useLocalStorage from "./hooks/useLocalStorage"
+// import useLocalStorage from "./hooks/useLocalStorage"
 
 
 
 const App = () => {
 
-  const [loggedInUser, setLoggedInUser ] = useLocalStorage('name', '');
 
-
-
-  const savedUser = value => {
-    setLoggedInUser(value)
-  }
-  
-console.log(loggedInUser, "app")
 
   return (
     <div className="App">
-
-
 
       <Switch>
         <Route exact path='/' component={HomePage} />
         <PrivateRoute exact path="/protected" component={PrivateHomePage}/>
 
-        <Route
-          exact path='/login_signup'
-          render={(props) => <Page {...props} savedUser={savedUser} loggedInUser={loggedInUser}/>}
-        />
+        <Route exact path='/login_signup' component={Page} />
 
         <PrivateRoute exact path="/CommentCard" component={CommentCard} />
 
         <Route path="/about" render={() => <About />} />
-
       </Switch>
 
     </div>

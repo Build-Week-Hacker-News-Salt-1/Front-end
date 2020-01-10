@@ -9,9 +9,9 @@ export const Page = props => {
 console.log(props.loggedInUser, "Page")
 
   return ( <>
-      <Header loggedInUser={props.loggedInUser}/>
+      <Header />
     <div className="login-signup-page-div">
-      <Login history={props.history} savedUser={props.savedUser}/>
+      <Login history={props.history} />
       <Signup />
     </div>
     </>

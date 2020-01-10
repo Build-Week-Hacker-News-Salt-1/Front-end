@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from "react";
 import axios from "axios";
 
+import useLocalStorage from "../hooks/useLocalStorage"
+
 
 
 
@@ -15,6 +17,7 @@ const Login = props => {
 
     const [ credentials, setCredentials ] = useState(initialState);
     const [ error, setError ] = useState(false);
+    const [loggedInUser, setLoggedInUser ] = useLocalStorage('name', '');
 
 
     const resetField = () => {
@@ -23,14 +26,13 @@ const Login = props => {
   
 
 
-
     const handleSubmit = e => {
       e.preventDefault();
       axios
           .post("https://salty-hacker.herokuapp.com/api/login", credentials)
           .then(res => {
               resetField();
-              props.savedUser(JSON.parse(res.config.data).username);
+              setLoggedInUser(JSON.parse(res.config.data).username);
               setError(false);
               localStorage.setItem("token", res.data.payload);
               props.history.push("/protected");
