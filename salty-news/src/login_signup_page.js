@@ -4,11 +4,11 @@ import Login from './components/Login';
 import Signup from './components/Signup';
 import Header from './components/Header'
 
-export const Page = () => {
+export const Page = props => {
   return (
     <div>
       <Header />
-      <Login />
+      <Login history={props.history} />
       <Signup />
     </div>
   );
