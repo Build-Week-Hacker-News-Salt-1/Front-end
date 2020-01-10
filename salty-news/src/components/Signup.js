@@ -36,7 +36,7 @@ const Signup = () => {
             })
     }
 
-    console.log(signupCredentials)
+  
 
     return(
         <div className="login-container">

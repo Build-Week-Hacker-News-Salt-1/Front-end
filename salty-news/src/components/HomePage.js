@@ -4,7 +4,6 @@ import CommentCard from './CommentCard';
 import Header from './Header';
 
 const HomePage = props => {
-    //const [feed, setFeed] = useState([]);
 
     const addCommentFn = comment => {
       const newCommit = {
@@ -16,7 +15,7 @@ const HomePage = props => {
 
     return (
         <div>
-            <Header/>
+            <Header />
 
             <div className="feed">
 
