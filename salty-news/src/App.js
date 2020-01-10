@@ -8,6 +8,8 @@ import PrivateRoute from './components/PrivateRoute'
 import { Page } from './login_signup_page';
 import HomePage from './components/HomePage';
 
+import About from './components/about';
+
 // import logo from './logo.svg';
 // import './App.css';
 
@@ -17,14 +19,16 @@ const App = props => {
 
       <header className="App-header">
         <Link to='/login_signup'>Login</Link>
-      </header> 
-      
-      
+        <Link to='./about'>About</Link>
+      </header>
+
+
 
       <Switch>
         {/* <Route exact path='/' component={HomePage} /> */}
         <PrivateRoute exact path="/protected" component={HomePage} />
         <Route path='/login_signup' component={Page} />
+        <Route path="/about" render={() => <About />} />
       </Switch>
 
     </div>
