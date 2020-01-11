@@ -9,11 +9,10 @@ export const Page = props => {
 console.log(props.loggedInUser, "Page")
 
   return ( <>
-      <Header />
+    <Header />
     <div className="login-signup-page-div">
-      <Login history={props.history} />
-      <Signup />
+    <Login history={props.history} />
+    <Signup />
     </div>
-    </>
-  );
+  </> );
 };
