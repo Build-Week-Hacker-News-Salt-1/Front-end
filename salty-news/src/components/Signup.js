@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import axios from "axios";
-// import {axiosWithAuth} from "../utils/axiosWithAuth";
+
+
 
 const initialState = {
   username: "",
@@ -24,10 +25,12 @@ const Signup = () => {
         axios
             .post("https://salty-hacker.herokuapp.com/api/register", signupCredentials)
             .then(res => {
-              console.log(res);
+              console.log(res.data.user_id);
               resetField();
               setError(false);
               setSuccessSignup(true);
+              localStorage.setItem("id", res.data.user_id);
+              localStorage.setItem("email", res.data.email);
             })
             .catch(err => {
               console.log(err);
@@ -36,6 +39,9 @@ const Signup = () => {
             })
     }
 
+    const handleChange = e => {
+      setSignupCredentials({ ...signupCredentials, [e.target.name]: e.target.value });
+    };
   
 
     return(
@@ -54,7 +60,7 @@ const Signup = () => {
                   type="text"
                   name="username"
                   value={signupCredentials.username}
-                  onChange={e => setSignupCredentials({...signupCredentials, username: e.target.value})}
+                  onChange={handleChange}
                 />
             </div>
             <div className="form-container-grid">
@@ -66,7 +72,7 @@ const Signup = () => {
                   type="password"
                   name="password"
                   value={signupCredentials.password}
-                  onChange={e => setSignupCredentials({...signupCredentials, password: e.target.value})}
+                  onChange={handleChange}
                 />
             </div>
             <div className="form-container-grid">
@@ -78,7 +84,7 @@ const Signup = () => {
                   type="text"
                   name="email"
                   value={signupCredentials.email}
-                  onChange={e => setSignupCredentials({...signupCredentials, email: e.target.value})}
+                  onChange={handleChange}
                 />
             </div>
               <button>SignUp</button>

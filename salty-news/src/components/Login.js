@@ -23,10 +23,11 @@ const Login = props => {
       axios
           .post("https://salty-hacker.herokuapp.com/api/login", credentials)
           .then(res => {
+            console.log(res)
               resetField();
               setLoggedInUser(JSON.parse(res.config.data).username);
               setError(false);
-              localStorage.setItem("token", res.data.payload);
+              localStorage.setItem("token", res.data.token);
               props.history.push("/protected");
                     
           })

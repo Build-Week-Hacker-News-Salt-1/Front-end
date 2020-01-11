@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import { Route, Switch } from 'react-router-dom';
 
@@ -10,13 +10,12 @@ import HomePage from './components/HomePage';
 import CommentCard from "./components/CommentCard";
 import PrivateHomePage from "./components/PrivateHomePage";
 import About from './components/about';
+import UserCard from "./components/UserCard";
 
-// import useLocalStorage from "./hooks/useLocalStorage"
 
 
 
 const App = () => {
-
 
 
   return (
@@ -25,6 +24,8 @@ const App = () => {
       <Switch>
         <Route exact path='/' component={HomePage} />
         <PrivateRoute exact path="/protected" component={PrivateHomePage}/>
+
+        <PrivateRoute exact path="/UserCard" component={UserCard}/>
 
         <Route exact path='/login_signup' component={Page} />
 

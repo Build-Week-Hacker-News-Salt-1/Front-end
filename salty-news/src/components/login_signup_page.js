@@ -6,7 +6,7 @@ import Header from './Header'
 
 export const Page = props => {
 
-console.log(props.loggedInUser, "Page")
+
 
   return ( <>
     <Header />
