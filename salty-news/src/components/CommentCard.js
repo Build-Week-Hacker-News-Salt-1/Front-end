@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import styled from 'styled-components';
+// import styled from 'styled-components';
 
-let StyledCard = styled.div`
-    /*nothing yet*/
-`
+// let StyledCard = styled.div`
+//     /*nothing yet*/
+// `;;
 
 export default function CommentCard(props) {
 
@@ -22,7 +22,6 @@ export default function CommentCard(props) {
   };
 
   return (
-    <StyledCard>
       <form onSubmit={handleSubmit}>
         <div>
           <label>
@@ -46,8 +45,7 @@ export default function CommentCard(props) {
             />
           </label>
         </div>
-        <button>Add Comment</button>
+        <button>Submit</button>
       </form>
-    </StyledCard>
   )
 }

@@ -1,6 +1,10 @@
-import React from 'react';
-import {Link} from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { Link, Route } from 'react-router-dom';
 import styled from 'styled-components';
+
+import CommentCard from './CommentCard';
+
+import { withRouter } from 'react-router-dom';
 
 const StyledHeader = styled.header`
     display: flex;
@@ -28,23 +32,58 @@ const StyledHeader = styled.header`
     }
 `;
 
-export default function Header({user}) {
+const Header = props => {
+
+    
+
+    const logout = () => {
+        localStorage.clear("token");
+        props.history.push("/")
+    }
+
+
+console.log(props.loggedInUser)
     return (
         <StyledHeader>
+          <div className="left">
+            <Link to="/">Home</Link>
+          </div>
+          <div className="right">
+            <Link to="/saved">Saved</Link>
+          </div>
+              {/* 
+                    ! TODO !
+                    user dropdown menu. Text content = username
+                    option to log out
+              */}
+          <div>
+            <nav>
+              <Link to='/CommentCard'>Submit Comment</Link>
+            </nav>
+            <Route 
+              path='/CommentCard' 
+              component={CommentCard} 
+            />
+          </div>
             {/* maybe a search bar for stretch goal here */}
             <div className="left">
                 <Link to="/">Home</Link>
             </div>
             <div className="right">
-                <Link to='/login_signup'>Login</Link>
                 {/* 
                     ! TODO !
                     user dropdown menu. Text content = username
                     option to log out
                 */}
-                <span>PLACEHOLDER</span>
+                {localStorage.getItem("token") ? <Link>User: {JSON.parse(localStorage.getItem("name"))}</Link> : null }
+                <Link to='./about'>About</Link>
+                {!localStorage.getItem("token") ? <Link to='/login_signup'>Login</Link> : null}
+                {localStorage.getItem("token") ? <Link onClick={logout}>Logout</Link> : null}
+                
             </div>
-            
         </StyledHeader>
     )
 }
+
+export default withRouter (Header);
+// export default Header;
