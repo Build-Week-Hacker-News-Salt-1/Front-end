@@ -15,6 +15,7 @@ const StyledHeader = styled.nav`
     padding: 0 50px;
     min-height: 50px;
     background: #ff6000;
+
     a {
         text-decoration: none;
         color: black;
@@ -22,6 +23,7 @@ const StyledHeader = styled.nav`
     a:hover {
         text-decoration: underline;
     }
+
     div {
         display: flex;
         flex-direction: row;
