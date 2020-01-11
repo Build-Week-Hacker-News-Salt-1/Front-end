@@ -4,7 +4,7 @@ const Comments = props => {
   console.log(props);
   return (
     <div>
-      {props.commentsList.map(note => {
+      {props.commentsList.map(comment => {
         return (
           <div key={comment.id}>
             <h2>{comment.title}</h2>
