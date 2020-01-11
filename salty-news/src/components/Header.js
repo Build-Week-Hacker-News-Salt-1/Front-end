@@ -6,16 +6,15 @@ import CommentCard from './CommentCard';
 
 import { withRouter } from 'react-router-dom';
 
-const StyledHeader = styled.header`
+const StyledHeader = styled.nav`
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: space-between;
     align-items: center;
-    /* temporary values */
     padding: 0 50px;
     min-height: 50px;
-    background: orange;
+    background: #ff6000;
 
     a {
         text-decoration: none;
@@ -26,11 +25,15 @@ const StyledHeader = styled.header`
         text-decoration: underline;
     }
 
-    .left, .right {
+    div {
         display: flex;
         flex-direction: row;
     }
 `;
+
+const Separator = () => <span style={{
+    padding: "0 5px",
+}}>|</span>
 
 const Header = props => {
 
@@ -45,42 +48,33 @@ const Header = props => {
 console.log(props.loggedInUser)
     return (
         <StyledHeader>
-          <div className="left">
-            <Link to="/">Home</Link>
-          </div>
-          <div className="right">
-            <Link to="/saved">Saved</Link>
-          </div>
-              {/* 
-                    ! TODO !
-                    user dropdown menu. Text content = username
-                    option to log out
-              */}
-          <div>
-            <nav>
-              <Link to='/CommentCard'>Submit Comment</Link>
-            </nav>
-            <Route 
-              path='/CommentCard' 
-              component={CommentCard} 
-            />
-          </div>
-            {/* maybe a search bar for stretch goal here */}
-            <div className="left">
+            <div>
                 <Link to="/">Home</Link>
+                <Separator />
+                <Link to='/about' className="last">About</Link>
             </div>
-            <div className="right">
-                {/* 
-                    ! TODO !
-                    user dropdown menu. Text content = username
-                    option to log out
-                */}
-                {localStorage.getItem("token") ? <Link>User: {JSON.parse(localStorage.getItem("name"))}</Link> : null }
-                <Link to='./about'>About</Link>
-                {!localStorage.getItem("token") ? <Link to='/login_signup'>Login</Link> : null}
-                {localStorage.getItem("token") ? <Link onClick={logout}>Logout</Link> : null}
-                
-            </div>
+            {/* <div>
+                <nav>
+                <Link to='/CommentCard'>Submit Comment</Link>
+                </nav>
+                <Route 
+                path='/CommentCard' 
+                component={CommentCard} 
+                />
+            </div> */}
+            { localStorage.getItem("token") ? // if logged in
+                <div>
+                    <Link>User: {JSON.parse(localStorage.getItem("name"))}</Link>
+                    <Separator />
+                    <Link onClick={logout} className="last">Logout</Link>
+                </div>
+                : // if not logged in
+                <div>
+                    <Link to='/login_signup' className="last">Login</Link>
+                </div>
+            }
+            
+            
         </StyledHeader>
     )
 }
