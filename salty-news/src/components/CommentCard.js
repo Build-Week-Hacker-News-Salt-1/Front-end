@@ -5,6 +5,8 @@ import React, { useState } from 'react';
 //     /*nothing yet*/
 // `;;
 
+import Header from './Header';
+
 export default function CommentCard(props) {
 
   const [comment, setComment] = useState({title: "", text: ""});
@@ -22,6 +24,9 @@ export default function CommentCard(props) {
   };
 
   return (
+    <div>
+      <Header />
+
       <form onSubmit={handleSubmit}>
         <div>
           <label>
@@ -34,6 +39,7 @@ export default function CommentCard(props) {
             />
           </label>
         </div>
+
         <div>
           <label>
             text:
@@ -45,7 +51,9 @@ export default function CommentCard(props) {
             />
           </label>
         </div>
+        
         <button>Submit</button>
       </form>
+    </div>
   )
 }

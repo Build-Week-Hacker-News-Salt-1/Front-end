@@ -3,15 +3,10 @@ import axios from "axios";
 
 import useLocalStorage from "../hooks/useLocalStorage"
 
-
-
-
 const initialState = {
   username: "",
   password: ""
 };
-
-
 
 const Login = props => {
 
@@ -19,12 +14,9 @@ const Login = props => {
     const [ error, setError ] = useState(false);
     const [loggedInUser, setLoggedInUser ] = useLocalStorage('name', '');
 
-
     const resetField = () => {
       setCredentials(initialState);
     }
-  
-
 
     const handleSubmit = e => {
       e.preventDefault();
