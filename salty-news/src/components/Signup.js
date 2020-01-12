@@ -39,7 +39,7 @@ const Signup = () => {
   
 
     return(
-        <div className="login-container">
+      <div className="login-container">
         <h2 className="header-login">
           Create Account
         </h2>
@@ -49,39 +49,39 @@ const Signup = () => {
               <label htmlFor="username-signup">
                 username:
               </label>
-                <input
-                  id="username-signup"
-                  type="text"
-                  name="username"
-                  value={signupCredentials.username}
-                  onChange={e => setSignupCredentials({...signupCredentials, username: e.target.value})}
-                />
+              <input
+                id="username-signup"
+                type="text"
+                name="username"
+                value={signupCredentials.username}
+                onChange={e => setSignupCredentials({...signupCredentials, username: e.target.value})}
+              />
             </div>
             <div className="form-container-grid">
               <label htmlFor="password-signup">
                 password:
               </label>
-                <input
-                  id="password-signup"
-                  type="password"
-                  name="password"
-                  value={signupCredentials.password}
-                  onChange={e => setSignupCredentials({...signupCredentials, password: e.target.value})}
-                />
+              <input
+                id="password-signup"
+                type="password"
+                name="password"
+                value={signupCredentials.password}
+                onChange={e => setSignupCredentials({...signupCredentials, password: e.target.value})}
+              />
             </div>
             <div className="form-container-grid">
               <label htmlFor="email-signup">
                 email:
               </label>
-                <input
-                  id="email-signup"
-                  type="text"
-                  name="email"
-                  value={signupCredentials.email}
-                  onChange={e => setSignupCredentials({...signupCredentials, email: e.target.value})}
-                />
+              <input
+                id="email-signup"
+                type="text"
+                name="email"
+                value={signupCredentials.email}
+                onChange={e => setSignupCredentials({...signupCredentials, email: e.target.value})}
+              />
             </div>
-              <button>SignUp</button>
+            <button>SignUp</button>
           </form>
           {error ? <div className="error-message">
                 <p>Incorrect Signup. Please input a valid username, password, and email.</p>
@@ -93,7 +93,7 @@ const Signup = () => {
 
  
 
-        </div>
+      </div>
     )
 }
 
