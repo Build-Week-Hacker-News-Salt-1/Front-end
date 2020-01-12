@@ -20,7 +20,6 @@ const StyledHeader = styled.nav`
         text-decoration: none;
         color: black;
     }
-
     a:hover {
         text-decoration: underline;
     }
@@ -40,12 +39,11 @@ const Header = props => {
     
 
     const logout = () => {
-        localStorage.clear("token");
+        localStorage.clear();
         props.history.push("/")
     }
 
 
-console.log(props.loggedInUser)
     return (
         <StyledHeader>
             <div>
@@ -64,7 +62,7 @@ console.log(props.loggedInUser)
             </div> */}
             { localStorage.getItem("token") ? // if logged in
                 <div>
-                    <Link>User: {JSON.parse(localStorage.getItem("name"))}</Link>
+                    <Link to="/UserCard">User: {JSON.parse(localStorage.getItem("name"))}</Link>
                     <Separator />
                     <Link onClick={logout} className="last">Logout</Link>
                 </div>

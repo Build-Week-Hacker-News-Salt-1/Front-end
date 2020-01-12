@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import axios from "axios";
-// import {axiosWithAuth} from "../utils/axiosWithAuth";
+
+
 
 const initialState = {
   username: "",
@@ -24,10 +25,12 @@ const Signup = () => {
         axios
             .post("https://salty-hacker.herokuapp.com/api/register", signupCredentials)
             .then(res => {
-              console.log(res);
+              console.log(res.data.user_id);
               resetField();
               setError(false);
               setSuccessSignup(true);
+              localStorage.setItem("id", res.data.user_id);
+              localStorage.setItem("email", res.data.email);
             })
             .catch(err => {
               console.log(err);
@@ -36,6 +39,9 @@ const Signup = () => {
             })
     }
 
+    const handleChange = e => {
+      setSignupCredentials({ ...signupCredentials, [e.target.name]: e.target.value });
+    };
   
 
     return(
