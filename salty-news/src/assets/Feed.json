@@ -1,0 +1,108 @@
+[
+    {
+        "by" : "Wilduck",
+        "id" : 2921984,
+        "parent" : 2921959,
+        "text" : "True. While I'm not experienced with Prolog my impression is that it's often embedded in other languages, which I see as a very positive thing.<p>Beyond simply knowing a large amount of languages I think it's important for a programmer to be proficient at getting different languages/environments to operate together, as this opens up the ability to use domain specific languages. So, kudos, Prolog is probably a perfect example of this.",
+        "time" : 1314211161,
+        "type" : "comment",
+        "saltiness" : 0
+    },
+    {
+        "by" : "EGreg",
+        "id" : 2134567,
+        "kids" : [ 2134610, 2134611, 2134621 ],
+        "parent" : 2134561,
+        "text" : "We here talk about the internet, mobile, geo and all this cool stuff... but after reading more about the NASA's recent discovery that the magnetosphere has been breached (by an unusual event, too -- the magnetic fields were ALIGNED when the breach occurred, which flies in the face of what scientists know right now, it seems) -- I am pretty worried that everything we take for granted right now is at risk. Including electrical power lines, and worldwide communications systems.<p>Anyway, the link I posted may seem dubious, but it in fact seems to describe the situation pretty accurately. By itself, a solar flare is not a big deal:<p><a href=\"http://www.universetoday.com/14645/2012-no-killer-solar-flare/\" rel=\"nofollow\">http://www.universetoday.com/14645/2012-no-killer-solar-flar...</a><p>but this 2008 article didn't realize that our magnetosphere has a giant hole in it 10x bigger than we previously thought. It is 4x bigger than the earth itself. And it's directly on the day side. The earth's magnetosphere has been breached AND the sun is entering its solar maximum period.<p>Can any people more knowledgeable than me weigh in and tell us what is possible and what is likely to happen? Is there anything we can do to prepare ourselves?",
+        "time" : 1295853326,
+        "type" : "comment",
+        "saltiness" : 20
+    },
+    {
+        "by" : "MarkMc",
+        "id" : 2177777,
+        "parent" : 2177515,
+        "text" : "The point is that the creators of the data were given a say in how it was used.  Googlers have busted a gut to provide 99% of the value of the clickstream data so they should determine how that data is used.<p>There's a more general point here: If something is difficult to do but easy to copy, then society should prevent that copying so that the creator can be rewarded for their effort.  This maximises creativity and productivity and boosts GDP. Musicians, inventors, artists, authors, drug companies and software developers all rely on this principle.  If we didn't have copyright and patents and robots.txt then there would be no incentive to produce half of the things people want, and we would all be much worse off.  Google (and any other search engine) should be subject to the same rules.",
+        "time" : 1296780452,
+        "type" : "comment",
+        "saltiness" : 40
+    },
+    {
+        "by" : "kellishaver",
+        "id" : 2345678,
+        "parent" : 2345130,
+        "text" : "I'm the same way, and I know a lot of people like this. Many times I've been working on a project with friends and we'll get stuck on something and we'll joke that someone is going to have to go take a shower, so we can get past the hurdle.<p>Also, I may have, on one or two occasions, written code on the tile walls with tub crayons.... after all, you get a brilliant idea, you don't want to lose it in the time it takes to dry of.<p>I'd say that in addition to letting go of assumptions, it's just as much about breaking patterns.<p>I often find that once I start trying to fix a problem, my brain gets stuck in that way of fixing it and if that doesn't work, it then becomes a matter of fixing the fix, etc. It all just kind of builds up. If I'm standing in the shower with hot water pouring over my head, I can free my mind of whatever I was concentrating on and then new ideas emerge.",
+        "time" : 1300601659,
+        "type" : "comment",
+        "saltiness" : 15
+    },
+    {
+        "by" : "mike-cardwell",
+        "id" : 1234567,
+        "kids" : [ 1234727, 1234721 ],
+        "parent" : 1234460,
+        "text" : "Yet another reason why the CA system is inherently untrustworthy and something like this should be adopted instead: <a href=\"https://secure.grepular.com/DNSSEC_Will_Kill_Commercial_CAs\" rel=\"nofollow\">https://secure.grepular.com/DNSSEC_Will_Kill_Commercial_CAs</a>",
+        "time" : 1270130096,
+        "type" : "comment",
+        "saltiness" : 40
+    },
+    {
+        "by" : "blogimus",
+        "id" : 765432,
+        "kids" : [ 765456 ],
+        "parent" : 765419,
+        "text" : "This blog is yet another reason why editors play a crucial role in weeding out crap articles. So scientists aren't the ideal protagonist in every story. Tell me something I don't know.",
+        "time" : 1250384149,
+        "type" : "comment",
+        "saltiness" : 60
+    },
+    {
+        "by" : "goldfeld",
+        "id" : 7777776,
+        "parent" : 7777683,
+        "text" : "Most welcome! I wrote that wall of text more in wanting to get my reasons out of my head, like you did, than in trying to wrestle you over to my side of the field. But if you want to be really tempted now, reconsider, like someone else commented here, the importance of concurrency and persistent data structures for web development going forward. Even for a one-man team (such as I plan to be, and actually one of my side-projects in Clojure has to do with language learning and SRS, would love to keep up with what you end up doing.) It means you can handle traffic spikes and trace errors as a one-man operation much more easily than if you had stateful bugs and failures to deal with.",
+        "time" : 1400674534,
+        "type" : "comment",
+        "saltiness" : 0
+    },
+    {
+        "by" : "bkudria",
+        "id" : 1000000,
+        "kids" : [ 1000068, 1000080, 1000033, 1000008, 1000056, 1000013, 1000009, 1000073 ],
+        "parent" : 999719,
+        "text" : "Feral humans are people too.<p>Can you explain to me why only rich people ought to live in cities?",
+        "time" : 1261006251,
+        "type" : "comment",
+        "saltiness" : 30
+    },
+    {
+        "by" : "geoffw8",
+        "id" : 2222222,
+        "kids" : [ 2222891 ],
+        "parent" : 2221615,
+        "text" : "A sign-in wall. Mega fail.",
+        "time" : 1297791298,
+        "type" : "comment",
+        "saltiness" : 50
+    },
+    {
+        "by" : "cypress-hill",
+        "dead" : true,
+        "id" : 299911,
+        "parent" : 299851,
+        "text" : "stupid. unless they know something about monetary policy, they will either inflate the shit out of it and it will be worthless, or they will too tightly constrain it and their local economy will fall apart",
+        "time" : 1221001509,
+        "type" : "comment",
+        "saltiness" : 60
+    },
+    {
+        "by" : "marshray",
+        "id" : 2039215,
+        "kids" : [ 2039368 ],
+        "parent" : 2039117,
+        "text" : "Dear Jeff Bezos and Amazon:\nTake note of how it's done by real men. By your actions WRT Orwell and Wikileaks, you've shown that you aren't worthy to shine the shoes of a real information-bearer, and you aren't fit to host my cloud nodes either.\nSincerely,\nMarsh Ray",
+        "time" : 1293301800,
+        "type" : "comment",
+        "saltiness" : 50
+    }
+]

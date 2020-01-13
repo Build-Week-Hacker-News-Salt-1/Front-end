@@ -1,15 +1,27 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 
-const Comments = props => {
-  console.log(props);
+const Comments = ({feed, savedComments, setSavedComments}) => {
+  //console.log(props);
   return (
     <div>
-      {props.commentsList.map(comment => {
+      {feed.map(comment => {
         return (
           <div key={comment.id}>
-            <h2>{comment.title}</h2>
+            <h2>{comment.by}</h2>
             <p>{comment.text}</p>
-            <button onClick={() => props.delCommentFn(comment.id)}>del</button>
+            { localStorage.getItem("token") && (
+              savedComments.includes(comment.id)
+              ? // if already saved
+              <button onClick={() => {
+                let saved = [...savedComments];
+                saved.splice(savedComments.indexOf(comment.id), 1);
+                setSavedComments(saved);
+              }}>Unsave</button>
+              : // else
+              <button onClick={() => {
+                setSavedComments([...savedComments, comment.id])
+              }}>Save</button>
+            )}
           </div>
         );
       })}

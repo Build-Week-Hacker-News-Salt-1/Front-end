@@ -40,7 +40,7 @@ const Header = props => {
 
     const logout = () => {
         localStorage.clear();
-        props.history.push("/")
+        //props.history.push("/")
     }
 
 
@@ -51,18 +51,10 @@ const Header = props => {
                 <Separator />
                 <Link to='/about' className="last">About</Link>
             </div>
-            {/* <div>
-                <nav>
-                <Link to='/CommentCard'>Submit Comment</Link>
-                </nav>
-                <Route 
-                path='/CommentCard' 
-                component={CommentCard} 
-                />
-            </div> */}
-            { localStorage.getItem("token") ? // if logged in
+            { localStorage.getItem("token")
+                ? // if logged in
                 <div>
-                    <Link to="/UserCard">User: {JSON.parse(localStorage.getItem("name"))}</Link>
+                    <Link to="/user">User: {JSON.parse(localStorage.getItem("name"))}</Link>
                     <Separator />
                     <Link onClick={logout} className="last">Logout</Link>
                 </div>

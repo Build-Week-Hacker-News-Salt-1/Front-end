@@ -28,7 +28,7 @@ const Login = props => {
               setLoggedInUser(JSON.parse(res.config.data).username);
               setError(false);
               localStorage.setItem("token", res.data.token);
-              props.history.push("/protected");
+              props.history.push("/");
                     
           })
           .catch(err => {
@@ -36,14 +36,7 @@ const Login = props => {
             setError(true)
           })
   }
-
- 
   
-
-  
-  
-
-
     return (
       <div>
         <h2>

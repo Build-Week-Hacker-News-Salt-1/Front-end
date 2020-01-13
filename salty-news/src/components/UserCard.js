@@ -15,7 +15,7 @@ const UserCard = props => {
           .then(res => {
             console.log(res)
             localStorage.clear();
-            props.history.push("/HomePage");
+            props.history.push("/");
           })
           .catch(err =>
             console.log(err)    
