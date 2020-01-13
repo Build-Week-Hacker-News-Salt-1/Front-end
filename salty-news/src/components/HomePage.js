@@ -1,35 +1,34 @@
 import React, { useState } from 'react';
-import Comments from './Comments';
+import styled from 'styled-components';
 
+import Comments from './Comments';
 import Header from './Header';
+
+const feedData = require("../assets/Feed.json");
 
 const HomePage = props => {
 
-  const [comment, setComment] = useState([
-    {
-      id: 1,
-      title: '1. A Man Who’s Spending $1B to Own Every Pop Song',
-      text: '131 points by SirLJ 3 hours ago | unvote | hide | 83 comments'
-    }
-  ])
+  const [comments, setComments] = useState(feedData);
 
-    const addCommentFn = comment => {
-      const newCommit = {
-        id: Date.now(),
-        title: comment.title,
-        text: newCommit.text
-      };
-
-      setComment([...comment, newCommit]);
+  const addCommentFn = comment => {
+    const newCommit = {
+      id: Date.now(),
+      title: comment.title,
+      text: newCommit.text
     };
 
-    return (
-        <div>
-            <Header />
+    setComments([...comment, newCommit]);
+  };
 
-            <Comments commentsList={comments} />
-        </div>
-    )
+  return (
+    <div style={{background: "#f6f6ef"}}>
+      <Header />
+
+      <div style={{margin: "0 40px"}}>
+        <Comments commentsList={comments}/>
+      </div>
+    </div>
+  )
 }
 
 export default HomePage;

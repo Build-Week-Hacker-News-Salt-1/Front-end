@@ -7,7 +7,7 @@ const Comments = props => {
       {props.commentsList.map(comment => {
         return (
           <div key={comment.id}>
-            <h2>{comment.title}</h2>
+            <h2>{comment.by}</h2>
             <p>{comment.text}</p>
             <button onClick={() => props.delCommentFn(comment.id)}>del</button>
           </div>
