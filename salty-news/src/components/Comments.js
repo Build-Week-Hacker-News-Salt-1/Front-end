@@ -13,7 +13,9 @@ const Comments = ({feed, savedComments, setSavedComments}) => {
               savedComments.includes(comment.id)
               ? // if already saved
               <button onClick={() => {
-                setSavedComments(savedComments.splice(savedComments.indexOf(comment.id), 1));
+                let saved = [...savedComments];
+                saved.splice(savedComments.indexOf(comment.id), 1);
+                setSavedComments(saved);
               }}>Unsave</button>
               : // else
               <button onClick={() => {
