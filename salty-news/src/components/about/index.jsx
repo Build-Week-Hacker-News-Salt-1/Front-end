@@ -22,7 +22,7 @@ let Card = styled.div`
 const About = () => {
     return (
         <div>
-            {/* {<Header />} */}
+            <Header />
             <h1 id="header" style={{
                 margin: "0 0 20px",
                 textAlign: "center",
