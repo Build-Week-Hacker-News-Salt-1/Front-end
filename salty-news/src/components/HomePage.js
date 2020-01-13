@@ -6,26 +6,16 @@ import Header from './Header';
 
 const feedData = require("../assets/Feed.json");
 
-const HomePage = props => {
-
-  const [comments, setComments] = useState(feedData);
-
-  const addCommentFn = comment => {
-    const newCommit = {
-      id: Date.now(),
-      title: comment.title,
-      text: newCommit.text
-    };
-
-    setComments([...comment, newCommit]);
-  };
+const HomePage = ({feed, savedComments, setSavedComments}) => {
 
   return (
     <div style={{background: "#f6f6ef"}}>
       <Header />
 
       <div style={{margin: "0 40px"}}>
-        <Comments commentsList={comments}/>
+        <Comments feed={feed}
+          savedComments={savedComments}
+          setSavedComments={setSavedComments}/>
       </div>
     </div>
   )
