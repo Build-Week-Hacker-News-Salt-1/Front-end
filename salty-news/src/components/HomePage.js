@@ -12,7 +12,7 @@ const HomePage = ({feed, savedComments, setSavedComments}) => {
     <div style={{background: "#f6f6ef"}}>
       <Header />
 
-      <div style={{margin: "0 40px"}}>
+      <div>
         <Comments feed={feed}
           savedComments={savedComments}
           setSavedComments={setSavedComments}/>

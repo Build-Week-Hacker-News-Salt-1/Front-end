@@ -1,13 +1,22 @@
 import React, {useState, useEffect} from "react";
+import styled from 'styled-components';
+
+let StyledComment = styled.div`
+  padding: 10px 20px;
+  &:hover {
+    background: #e3e3d0;
+  }
+`;
 
 const Comments = ({feed, savedComments, setSavedComments}) => {
   //console.log(props);
   return (
-    <div>
+    <div style={{margin: "0"}}>
       {feed.map(comment => {
         return (
-          <div key={comment.id}>
+          <StyledComment key={comment.id}>
             <h2>{comment.by}</h2>
+            <p style={{textDecoration: "underline"}}>Negativity: {comment.saltiness}</p>
             <p>{comment.text}</p>
             { localStorage.getItem("token") && (
               savedComments.includes(comment.id)
@@ -22,7 +31,7 @@ const Comments = ({feed, savedComments, setSavedComments}) => {
                 setSavedComments([...savedComments, comment.id])
               }}>Save</button>
             )}
-          </div>
+          </StyledComment>
         );
       })}
     </div>
